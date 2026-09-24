@@ -1,0 +1,7 @@
+{
+  "name": "WT AIM Generator",
+  "description": "WT AIM Generator - Avionics OS and War Thunder custom sight generator using AI vector extraction and .blk export.",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

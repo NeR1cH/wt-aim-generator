@@ -1,0 +1,142 @@
+:root {
+    --bg-main: #0a0f12;
+    --panel-bg: #121a21;
+    --border-color: #2a3b4c;
+    --text-main: #6b8a9e;
+    --neon-green: #39ff14;
+    --neon-red: #ff3333;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+}
+
+.panel-header {
+    color: var(--neon-green);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+input[type="password"], select {
+    width: 100%;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--neon-green);
+    padding: 8px;
+    font-family: var(--font-mono);
+}
+
+.dropzone {
+    border: 1px dashed var(--border-color);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.dropzone:hover {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+.action-btn {
+    background: transparent;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 12px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--neon-green);
+    color: var(--bg-main);
+}
+
+.log-window {
+    flex-grow: 1;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-size: 11px;
+    overflow-y: auto;
+}
+
+.sys-msg { color: var(--text-main); }
+.error-msg { color: var(--neon-red); }
+
+/* Радар */
+.radar-view {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.radar-header {
+    background: var(--panel-bg);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 12px;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #1a252f 0%, #0a0f12 100%);
+    position: relative;
+}
+
+canvas {
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    /* Здесь позже добавим фон-прицел через JS */
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--neon-green);
+}
